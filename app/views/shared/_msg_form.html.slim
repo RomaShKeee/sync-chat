@@ -1,0 +1,6 @@
+= form_for(@message) do |f|
+
+  .field.msg-input
+    = f.text_area :content, placeholder: "Compose new message...", maxlength: 140
+    .actions
+      = f.submit "OK", class: "btn btn-large btn-primary"

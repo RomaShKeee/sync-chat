@@ -1,0 +1,10 @@
+.header
+  h1 Rails Sync Chat
+-if signed_in?
+  .raw
+    .col-md-6.col-md-offset-3.box
+      = render 'shared/chat'
+      = render 'shared/msg_form'
+-else
+  h2
+    Sign in

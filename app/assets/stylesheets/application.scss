@@ -15,3 +15,27 @@
  */
   @import "bootstrap-sprockets";
   @import "bootstrap";
+
+body { background-color: #181818;
+  .header { text-align: center; } }
+.chat-box {
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 600px;}
+.body-msg {
+  word-wrap: break-word;
+  min-width: 300px; }
+.box {
+  background-color: #fff;
+  border: 1px solid #DDD;
+  border-radius: 5px;
+  padding: 20px;}
+.item { border-bottom: 1px solid #DDD;
+  .time { color: #c3c3c3;
+          text-align: right; }}
+.msg-input {
+  padding: 5px;
+  display: flex;
+  #message_content { width: 100%; }
+  .actions { padding: 10px; }}

@@ -1,0 +1,5 @@
+.row.item
+    .col-md-1 = item.user.username.capitalize!
+    .col-md-7
+      .body-msg = item.content
+    .col-md-4.time = item.created_at.strftime("%H:%M:%S")

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :messages
   root 'pages#main'
   get 'pages/main'
   devise_for :users
