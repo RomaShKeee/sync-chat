@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :destroy]
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
+  enable_sync
   # GET /messages
   # GET /messages.json
   def index
@@ -44,6 +45,7 @@ class MessagesController < ApplicationController
   def update
     respond_to do |format|
       if @message.update(message_params)
+        sync_update @message
         format.html { redirect_to @message, notice: 'Message was successfully updated.' }
         format.json { render :show, status: :ok, location: @message }
       else

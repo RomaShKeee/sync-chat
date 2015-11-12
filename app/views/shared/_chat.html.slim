@@ -1,4 +1,5 @@
 .chat-box#chat
-  = render partial: "shared/messages_item", collection: @messages, :as => :message
+  - @messages.each do |message|
+    = sync partial: "messages_item", resource: message
 
 
