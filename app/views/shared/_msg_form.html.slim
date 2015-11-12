@@ -1,4 +1,4 @@
-= form_for(@message) do |f|
+= form_for @message, remote: true do |f|
 
   .field.msg-input
     = f.text_area :content, placeholder: "Compose new message...", maxlength: 140

@@ -30,6 +30,7 @@ class MessagesController < ApplicationController
     respond_to do |format|
       if @message.save
         format.html { redirect_to root_url, notice: 'Message was successfully created.' }
+        format.js { @message }
         format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new }
@@ -58,6 +59,7 @@ class MessagesController < ApplicationController
     @message.destroy
     respond_to do |format|
       format.html { redirect_to messages_url, notice: 'Message was successfully destroyed.' }
+      format.js { @id = @message.id }
       format.json { head :no_content }
     end
   end

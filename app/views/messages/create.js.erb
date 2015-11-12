@@ -1,0 +1,4 @@
+$("#chat").append("<%=j render "shared/messages_item", message: @message %>");
+$(".chat-box").animate({ scrollTop: $('.chat-box').prop("scrollHeight")}, 1000);
+$("#message_content").val("");
+

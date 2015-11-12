@@ -1,5 +1,7 @@
-.row.item
-    .col-md-1 = item.user.username.capitalize!
+.row.item id="#{message.id}"
+    .col-md-1 = message.user.username.capitalize! + ':'
     .col-md-7
-      .body-msg = item.content
-    .col-md-4.time = item.created_at.strftime("%H:%M:%S")
+      .body-msg = message.content
+    .col-md-3
+      .time = message.created_at.strftime("%H:%M:%S")
+    .col-md-1 = button_to '&times;'.html_safe, message_path(message), :method => :delete, data: {:confirm => 'Are you sure?'} , remote: true, class: "btn btn-link"
